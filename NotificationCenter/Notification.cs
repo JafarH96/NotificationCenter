@@ -23,7 +23,7 @@ namespace NotificationCenter
 
         public override string ToString()
         {
-            string description = $"Name: {Name}, Sender: {Sender}, Object: {Obj}, User Info: [";
+            string description = $"{NotifyDate}: Name: {Name}, Sender: {Sender}, Object: {Obj}, User Info: [";
             if(UserInfo != null)
             {
                 int i = 0;
