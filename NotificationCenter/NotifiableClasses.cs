@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace NotificationCenter
 {
@@ -16,16 +17,18 @@ namespace NotificationCenter
 
         public void OnNotification(Notification notification)
         {
-            Console.WriteLine($"Class 1 => On name: {notification.name}, Date: {notification.notifyDate}, Object: {notification.obj.ToString()}");
+            Console.WriteLine(notification.ToString());
         }
 
         public void Start()
         {
+            var userInfo = new Dictionary<string, object>();
+            userInfo.Add("Num", 1);
             queue.Async((_) =>
             {
                 Thread.Sleep(2000);
                 Console.WriteLine($"Hello there!");
-                NotificationCenter.Default.Post(this, notifName, "Hello there!", null);
+                NotificationCenter.Default.Post(this, notifName, "Hello there!", userInfo);
                 Thread.Sleep(3000);
                 Console.WriteLine($"I'm class 1");
                 NotificationCenter.Default.Post(this, notifName, "I Am Here!", null);
@@ -47,7 +50,7 @@ namespace NotificationCenter
 
         public void OnNotification(Notification notification)
         {
-            Console.WriteLine($"Class 2 => On name: {notification.name}, Date: {notification.notifyDate}, Object: {notification.obj.ToString()}");
+            Console.WriteLine(notification.ToString());
         }
 
         public void Start()
