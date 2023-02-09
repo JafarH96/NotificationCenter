@@ -1,0 +1,6 @@
+*obj
+*bin
+*.vs
+
+DispatchQueue/*.exe
+packages
