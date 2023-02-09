@@ -1,0 +1,6 @@
+*obj
+*bin
+*.vs
+
+NotificationCenter/*.exe
+packages
