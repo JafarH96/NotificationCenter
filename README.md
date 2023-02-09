@@ -5,9 +5,8 @@ Transferring data between observers at high speed and completely asynchronously.
 
 ## Dependencies
 
-```
 [DispatchQueue](https://github.com/JafarH96/DispatchQueue)
-```
+
 
 ## Usage
 
