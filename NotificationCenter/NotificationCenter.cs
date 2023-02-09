@@ -17,18 +17,18 @@ namespace NotificationCenter
 
         public void AddObserver(Notifiable observer, NotificationName name)
         {
-            if (observers.ContainsKey(name.name) && observers[name.name].Contains(observer))
+            if (observers.ContainsKey(name.Name) && observers[name.Name].Contains(observer))
             {
                 return;
             }
 
-            if (!observers.ContainsKey(name.name))
+            if (!observers.ContainsKey(name.Name))
             {
-                observers.Add(name.name, new List<Notifiable>());
+                observers.Add(name.Name, new List<Notifiable>());
             }
 
-            observers[name.name].Add(observer);
-            Console.WriteLine($"[Notification Center] Adding {observer.GetType().Name} to the notifiation center");
+            observers[name.Name].Add(observer);
+            Console.WriteLine($"[Notification Center] {observer.GetType().Name} was added to the notifiation center as an observer");
         }
         
         public void RemoveObserver(Notifiable observer)
@@ -45,25 +45,25 @@ namespace NotificationCenter
 
         public void RemoveObserver(Notifiable observer, NotificationName name)
         {
-            if (observers.ContainsKey(name.name) && observers[name.name].Contains(observer))
+            if (observers.ContainsKey(name.Name) && observers[name.Name].Contains(observer))
             {
-                observers[name.name].Remove(observer);
-                Console.WriteLine($"[Notification Center] Removed {observer.GetType().Name} from notification name '{name.name}'");
+                observers[name.Name].Remove(observer);
+                Console.WriteLine($"[Notification Center] Removed {observer.GetType().Name} from notification name '{name.Name}'");
             }
         }
 
         public void Post(Notifiable sender, NotificationName name, object obj, Dictionary<string, object> userInfo)
         {
             Console.WriteLine($"[Notification Center] Notifying Observers");
-            if (!observers.ContainsKey(name.name))
+            if (!observers.ContainsKey(name.Name))
             {
                 return;
             }
             
-            Notification notification = new Notification(sender, name, obj, userInfo);
+            Notification notification = new Notification(sender.GetType().Name, name, obj, userInfo);
             queue.Async((_) =>
             {
-                foreach(var observer in observers[name.name])
+                foreach(var observer in observers[name.Name])
                 {
                     if (observer == sender) continue;
                     observer.OnNotification(notification);

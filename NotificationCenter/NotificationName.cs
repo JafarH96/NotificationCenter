@@ -8,15 +8,15 @@ namespace NotificationCenter
 {
     public class NotificationName
     {
-        public string name { get; }
+        public string Name { get; }
         public NotificationName(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
 
         public override string ToString()
         {
-            return name;
+            return Name;
         }
     }
 }

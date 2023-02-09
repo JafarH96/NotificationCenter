@@ -5,20 +5,41 @@ namespace NotificationCenter
 {
     public class Notification
     {
-        public NotificationName name { get; }
-        public DateTime notifyDate { get; }
-        public object obj { get; }
-        public Dictionary<string, object> userInfo { get; }
-        public Notifiable sender { get; }
+        public NotificationName Name { get; }
+        public DateTime NotifyDate { get; }
+        public object Obj { get; }
+        public Dictionary<string, object> UserInfo { get; }
+        public string Sender { get; }
 
-        public Notification(Notifiable sender, NotificationName name, object obj, Dictionary<string, object> userInfo)
+        public Notification(string sender, NotificationName name, object obj, Dictionary<string, object> userInfo)
         {
-            this.name = name;
-            this.obj = obj;
-            this.userInfo = userInfo;
+            this.Name = name;
+            this.Obj = obj;
+            this.UserInfo = userInfo;
 
-            this.sender = sender;
-            this.notifyDate = DateTime.Now;
+            this.Sender = sender;
+            this.NotifyDate = DateTime.Now;
+        }
+
+        public override string ToString()
+        {
+            string description = $"Name: {Name}, Sender: {Sender}, Object: {Obj}, User Info: [";
+            if(UserInfo != null)
+            {
+                int i = 0;
+                foreach (var info in UserInfo)
+                {
+                    description += $"{info.Key.ToString()} : {info.Value.ToString()}";
+                    i++;
+                    if (i != UserInfo.Count)
+                    {
+                        description += ", ";
+                    }
+                }
+            }
+            description += "]";
+
+            return description;
         }
     }
 }
