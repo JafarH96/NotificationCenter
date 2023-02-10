@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Collections.Generic;
-using DispatchQueue;
+using SerialDispatchQueueDotNetFramework;
 
 namespace NotificationCenter
 {
