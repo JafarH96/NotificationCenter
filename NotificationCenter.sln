@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationCenter", "NotificationCenter\NotificationCenter.csproj", "{A2F0B298-17C4-4630-86AB-6AB7C81E831A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationCenterNetFramework", "NotificationCenterNetFramework\NotificationCenterNetFramework.csproj", "{B256D0A6-5089-4304-BE21-919B8CDF7360}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A2F0B298-17C4-4630-86AB-6AB7C81E831A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2F0B298-17C4-4630-86AB-6AB7C81E831A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2F0B298-17C4-4630-86AB-6AB7C81E831A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B256D0A6-5089-4304-BE21-919B8CDF7360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B256D0A6-5089-4304-BE21-919B8CDF7360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B256D0A6-5089-4304-BE21-919B8CDF7360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B256D0A6-5089-4304-BE21-919B8CDF7360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
