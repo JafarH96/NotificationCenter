@@ -4,20 +4,14 @@ using System.Collections.Generic;
 
 namespace NotificationCenter
 {
-    public class NotifiableClass1: Notifiable
+    public class SenderClass
     {
         private NotificationName notifName;
         private DispatchQueue.DispatchQueue queue;
-        public NotifiableClass1()
+        public SenderClass()
         {
             queue = new DispatchQueue.DispatchQueue();
             notifName = new NotificationName("DefaultName");
-            NotificationCenter.Default.AddObserver(this, notifName);
-        }
-
-        public void OnNotification(Notification notification)
-        {
-            Console.WriteLine(notification.ToString());
         }
 
         public void Start()
@@ -32,7 +26,6 @@ namespace NotificationCenter
                 Thread.Sleep(3000);
                 Console.WriteLine($"I'm class 1");
                 NotificationCenter.Default.Post(this, notifName, "I Am Here!", null);
-                NotificationCenter.Default.RemoveObserver(this);
             });
         }
     }
