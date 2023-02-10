@@ -6,7 +6,7 @@ namespace NotificationCenter
     {
         static void Main(string[] args)
         {
-            NotifiableClass1 class1 = new NotifiableClass1();
+            SenderClass class1 = new SenderClass();
             NotifiableClass2 class2 = new NotifiableClass2();
 
             class1.Start();

@@ -52,7 +52,7 @@ namespace NotificationCenter
             }
         }
 
-        public void Post(Notifiable sender, NotificationName name, object obj, Dictionary<string, object> userInfo)
+        public void Post(object sender, NotificationName name, object obj, Dictionary<string, object> userInfo)
         {
             Console.WriteLine($"[Notification Center] Notifying Observers");
             if (!observers.ContainsKey(name.Name))
@@ -65,7 +65,6 @@ namespace NotificationCenter
             {
                 foreach(var observer in observers[name.Name])
                 {
-                    if (observer == sender) continue;
                     observer.OnNotification(notification);
                 }
             });
