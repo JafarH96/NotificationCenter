@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using DispatchQueue;
 
 namespace NotificationCenter
 {
     public class NotificationCenter
     {
         private readonly Dictionary<string, List<Notifiable>> observers;
-        private readonly DispatchQueue.DispatchQueue queue;
+        private readonly SerialQueue queue;
 
         public static NotificationCenter Default = new NotificationCenter();
         public NotificationCenter()
         {
             observers = new Dictionary<string, List<Notifiable>>();
-            queue = new DispatchQueue.DispatchQueue();
+            queue = new SerialQueue();
         }
 
         public void AddObserver(Notifiable observer, NotificationName name)

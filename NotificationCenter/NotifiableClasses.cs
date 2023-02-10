@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Threading;
 using System.Collections.Generic;
+using DispatchQueue;
 
 namespace NotificationCenter
 {
     public class SenderClass
     {
         private NotificationName notifName;
-        private DispatchQueue.DispatchQueue queue;
+        private SerialQueue queue;
         public SenderClass()
         {
-            queue = new DispatchQueue.DispatchQueue();
+            queue = new SerialQueue();
             notifName = new NotificationName("DefaultName");
         }
 
@@ -33,10 +34,10 @@ namespace NotificationCenter
     public class NotifiableClass2: Notifiable
     {
         private NotificationName notifName;
-        private DispatchQueue.DispatchQueue queue;
+        private SerialQueue queue;
         public NotifiableClass2()
         {
-            queue = new DispatchQueue.DispatchQueue();
+            queue = new SerialQueue();
             notifName = new NotificationName("DefaultName");
             NotificationCenter.Default.AddObserver(this, notifName);
         }
