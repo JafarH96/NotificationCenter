@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>com.jafarH.NotificationCenterNetCore</PackageId>
+    <Authors>JafarH96</Authors>
+    <Company>JafarH</Company>
+    <Description>A communication path between all classes of a project using the notification center. Transferring data between observers at high speed and completely asynchronously. Implemented similarly to NotificationCenter in Swift.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/JafarH96/NotificationCenter</PackageProjectUrl>
+    <PackageTags>NotificationCente, Observable, Notifying, Observing, Notification</PackageTags>
+    <PackageReleaseNotes>First Release.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="com.JafarH.SerialDispatchQueue" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>
