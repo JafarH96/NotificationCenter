@@ -5,10 +5,22 @@ namespace NotificationCenter
 {
     public class Notification
     {
+        /// <summary>
+        /// Notification unique name
+        /// </summary>
         public NotificationName Name { get; }
         public DateTime NotifyDate { get; }
+        /// <summary>
+        /// The object sent by the sender
+        /// </summary>
         public object Obj { get; }
+        /// <summary>
+        /// A dictionary contains arbitrary data set by the sender
+        /// </summary>
         public Dictionary<string, object> UserInfo { get; }
+        /// <summary>
+        /// Sender name
+        /// </summary>
         public string Sender { get; }
 
         public Notification(string sender, NotificationName name, object obj, Dictionary<string, object> userInfo)
